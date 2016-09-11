@@ -2,7 +2,7 @@
 <html lang="zh-Hans">
 <head>
 	<meta charset="utf-8" />
-	<title>创否 - 完成注册</title>
+	<title>ProjectName - Complete Sign Up</title>
 	<link rel="stylesheet" href="src/css/basic.css" />
 	<script src="src/lib/jquery.min.js"></script>
 	<script src="src/js/basic.js"></script>
@@ -13,10 +13,10 @@
 	<div class="content-wrapper moderate-margin">
 		<div class="header-wrapper center">
 			<div class="header">
-				完成注册
+				Complete Sign Up
 			</div>
-			<p class="subheader">填写下面的这些信息来完成在创否的第一步</p>
-			<p>所有的空格都为必填项</p>
+			<p class="subheader">Complete the following form to finish your step No.1 at ProjectName.</p>
+			<p>You need to complete all blanks.</p>
 		</div>
 		<hr />
 		<div class="usr-content">
@@ -27,63 +27,63 @@
 						<input type="hidden" name="token" id="token" />
 						<div class="basic-info-wrapper">
 							<div>
-								<label class="prompt">真实姓名</label>
-								<input class="long-span" type="text" name="fullname" placeholder="请填写真实姓名" />
+								<label class="prompt">Official Name</label>
+								<input class="long-span" type="text" name="fullname" placeholder="Please enter your official name here." />
 							</div>
 							<div>
-								<label class="prompt">昵称</label>
-								<input class="long-span" type="text" name="username" placeholder="将作为显示给其它用户的名字" />
+								<label class="prompt">Nickname</label>
+								<input class="long-span" type="text" name="username" placeholder="This is the name seen by others." />
 							</div>
 							<div class="gender-select selector-wrapper">
-								<label class="prompt">性别</label>
+								<label class="prompt">Gender</label>
 								<div class="selector-group">
 									<input id="gender-m" type="radio" name="gender" value="0">
-									<label for="gender-m">男</label>
+									<label for="gender-m">Male</label>
 									<input id="gender-f" type="radio" name="gender" value="1">
-									<label for="gender-f">女</label>
+									<label for="gender-f">Female</label>
 									<input id="gender-o" type="radio" name="gender" value="2">
-									<label for="gender-o">其它</label>
+									<label for="gender-o">Others</label>
 									<input id="gender-u" type="radio" name="gender" value="3">
-									<label for="gender-u">保密</label>
+									<label for="gender-u">Secret</label>
 								</div>
 							</div>
 						</div>
 						<hr />
 						<div class="account-info-wrapper">
 							<div>
-								<label class="prompt">密码</label>
-								<input class="long-span" id="new-password" type="password" name="password" placeholder="密码" />
+								<label class="prompt">Password</label>
+								<input class="long-span" id="new-password" type="password" name="password" placeholder="Password" />
 							</div>
 							<div>
-								<label class="prompt">确认密码</label>
-								<input class="long-span" id="repeat-password" type="password" placeholder="确认密码" />
+								<label class="prompt">Confirm Password</label>
+								<input class="long-span" id="repeat-password" type="password" placeholder="Confirm Password" />
 							</div>
 							<div class="date-wrapper">
-								<label class="prompt">生日</label>
+								<label class="prompt">Birthday</label>
 							</div>
 							<div>
-								<label class="prompt">安全提问</label>
-								<input class="long-span" type="text" name="safe-q" placeholder="一个你觉得只有你知道答案的问题" />
+								<label class="prompt">Security Question</label>
+								<input class="long-span" type="text" name="safe-q" placeholder="Enter a question to which only you know the answer." />
 							</div>
 							<div>
-								<label class="prompt">安全回答</label>
-								<input class="long-span" type="text" name="safe-a" placeholder="上面那题的答案" />
+								<label class="prompt">Answer to Security Question</label>
+								<input class="long-span" type="text" name="safe-a" placeholder="Answer to your security question" />
 							</div>
 						</div>
 						<hr />
 						<div class="customize-wrapper center">
 							<div>
 								<input id="get-update" class="long-span" type="checkbox" name="get-update" />
-								<label for="get-update">我愿意接收来自创客的最新消息</label>
+								<label for="get-update">I'd like to receive updates from ProjectName.</label>
 							</div>
 							<div class="margin-ver-10 left-align">
-								<label class="prompt"><a class="icon ext-link">服务条款</a></label>
+								<label class="prompt"><a class="icon ext-link">Agreement</a></label>
 								<input id="tos-confirm" class="long-span" type="checkbox" name="tos-confirm" />
-								<label for="tos-confirm" style="margin-left: 20px;">我已阅读并同意创客的服务条款</label>
+								<label for="tos-confirm" style="margin-left: 20px;">I have read and agree the terms of using ProjectName.</label>
 							</div>
 						</div>
 						<div class="captcha-wrapper">
-							<label class="prompt">验证码</label>
+							<label class="prompt">CAPTCHA</label>
 							<div class="captcha"></div>
 						</div>
 						<div class="submit-wrapper moderate-margin empty"></div>

@@ -918,7 +918,7 @@ a.original:hover {
 
 	a.icon {
 		border-radius: 2px;
-		font-size: 15px;
+		font-size: 12px;
 		height: 15px;
 		margin: 10px 3px 0;
 		overflow: hidden;
@@ -2146,8 +2146,8 @@ footer {
 	}
 
 #remember-me + label {
-	font-size: 15px;
-	padding: 5px 10px;
+	font-size: 12px;
+	padding: 5px 2px;
 }
 
 #loader {

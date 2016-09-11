@@ -1,0 +1,293 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+	<meta charset="utf-8" />
+	<title>创否</title>
+	<link rel="stylesheet" href="src/css/basic.css" />
+	<link rel="stylesheet" href="src/css/myhome.css" />
+	<script src="src/lib/jquery.min.js"></script>
+	<script src="src/js/password_reset.js"></script>
+	<script src="src/js/myhome.js"></script>
+	<script src="src/js/basic.js"></script>
+</head>
+<body>
+	<header>
+		<div style="margin: 0 20px 0 10%;">
+			<a href="javascript:;"><img width="60" height="45" id="logo-img" src="img/logo.png" alt="logo" /></a>
+		</div>
+		<div class="nav">
+			<ul>
+				<li>
+					<span>啊哈！</span>
+					<a class="icon text green-bg no-ripple">创意点子</a>
+				</li>
+				<li>
+					<span>什么？</span>
+					<a class="icon text blue-bg no-ripple">创业问答</a>
+				</li>
+				<li>
+					<span>创作：</span>
+					<a class="icon text orange-bg no-ripple">创业合作</a>
+				</li>
+			</ul>
+		</div>
+		<div class="usr-profile">
+			<a class="icon text search" id="search">搜索<input /></a>
+			<div class="guest">
+				<a class="icon text login" style="font-weight: normal;">登录</a>
+			</div>
+			<div class="usr-logged hidden">
+				<div class="usr-msg">
+					<a class="icon text notif">通知</a>
+					<p id="notif-count"></p>
+				</div>
+				<div class="usr-avatar-wrapper">
+					<img alt="头像" class="avatar-40" />
+				</div>
+				<div class="usr-menu">
+					<ul>
+						<li>
+							<p id="usrname">Dummy</p>
+						</li>
+						<li><a class="icon text home">主页</a></li>
+						<li><a class="icon text msg">消息</a></li>
+						<li><a class="icon text settings">设置</a></li>
+						<li><a class="icon text logout">登出</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="content-wrapper">
+		<div id="left-nav" class="r-color-wrapper margin-inh-wrapper orange">
+			<nav>
+				<ul>
+					<li class="has-sub selected">
+						<a class="icon text user" href="javascript:;">资料</a>
+						<ul>
+							<li><a class="icon text" href="javascript:;">基础资料</a></li>
+							<li><a class="icon text" href="javascript:;">详细资料</a></li>
+						</ul>
+					</li>
+					<li><a class="icon text key" id="safety-tab" href="javascript:;">安全</a></li>
+					<li><a class="icon text block" href="javascript:;">板块</a></li>
+					<li class="has-sub">
+						<a class="icon text privacy" href="javascript:;">隐私</a>
+						<ul>
+							<li><a class="icon text" href="javascript:;">资料可见度</a></li>
+							<li><a class="icon text" href="javascript:;">屏蔽内容</a></li>
+						</ul>
+					</li>
+					<li><a class="icon text experiment" href="javascript:;">实验</a></li>
+					<li><a class="icon text list" href="javascript:;">其它</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="settings">
+			<div id="usr-form-wrapper">
+				<div class="settings-wrapper show" id="personal-data">
+					<p class="title icon user">资料</p>
+					<form class="left-align" name="personal_data">
+						<input type="hidden" name="token" />
+						<div class="section-wrapper">
+							<p class="title" id="settings-1-1">基础资料</p>
+							<ul class="form-list">
+								<li>
+									<label class="prompt active">头像</label>
+									<div class="upload-avatar-wrapper">
+										<img alt="大头像" class="avatar-150" />
+										<a id="upload-avatar" class="icon text file-photo-o float-up orange-bg file-upload" href="javascript:;">上传<input type="file" name="avatar_img" accept="image/*" /></a>
+									</div>
+								</li>
+								<li>
+									<label class="prompt">真实姓名</label>
+									<input type="text" name="fullname" />
+								</li>
+								<li>
+									<label class="prompt">昵称</label>
+									<input type="text" name="username" />
+									<p class="prompt">显示给别人的名字</p>
+								</li>
+								<li>
+									<label class="prompt">邮箱</label>
+									<input type="text" value="dummy@dummy.com" readonly />
+									<p class="prompt">若想更改绑定的邮箱，请进入<a class=" original" onclick="$('#safety-tab').click()">安全</a>选项卡</p>
+								</li>
+								<li class="gender-select selector-wrapper">
+									<label class="prompt">性别</label>
+									<div class="selector-group empty" selector-type="radio" selectors="男|女|其它|保密" name="gender"></div>
+								</li>
+								<li>
+									<div class="input-dropmenu" dropdown="city">
+										<label class="prompt">当前所在地</label>
+									</div>
+								</li>
+								<li>
+									<div class="input-dropmenu" dropdown="occupation">
+										<label class="prompt">职业方向</label>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="section-wrapper">
+							<p class="title" id="settings-1-2">详细资料</p>
+							<ul class="form-list">
+								<li>
+									<label class="prompt">手机</label>
+									<input limit="tel" type="text" readonly />
+									<p class="prompt">若想更改绑定的手机，请进入<a class="original" onclick="$('#safety-tab').click()">安全</a>选项卡</p>
+								</li>
+								<li>
+									<label class="prompt">工作单位</label>
+									<input type="text" name="work" />
+								</li>
+								<li>
+									<label class="prompt">学历</label>
+									<div class="selector-group empty" selector-type="radio" selectors="初中及以下|高中|大专|本科|硕士|博士|其它" name="degree"></div>
+								</li>
+								<li>
+									<label class="prompt">仍为在校学生</label>
+									<div class="selector-group empty" selector-type="radio" selectors="是的{show:student}|不是{hide:student}|保密{hide:student}" name="is_student"></div>
+								</li>
+								<li showon="student">
+									<label class="prompt">在读院校</label>
+									<input type="text" name="current_school" />
+								</li>
+								<li showon="student">
+									<label class="prompt">在读院系</label>
+									<input type="text" name="current_college" />
+								</li>
+								<li showon="student">
+									<label class="prompt">预计毕业年份</label>
+									<input limit="year-after" type="number" name="current_grad_year" />
+								</li>
+								<li>
+									<label class="prompt">毕业院校</label>
+									<input type="text" name="grad_school" />
+								</li>
+								<li showon="grad-high-degree">
+									<label class="prompt">毕业院系</label>
+									<input type="text" name="grad_college" />
+								</li>
+								<li>
+									<label class="prompt">毕业年份</label>
+									<input limit="year-before" type="number" name="grad_year" />
+								</li>
+								<li>
+									<label class="prompt">个人主页</label>
+									<input type="text" name="my_homepage" />
+								</li>
+								<li>
+									<label class="prompt">一句话介绍</label>
+									<input type="text" name="my_brief" />
+								</li>
+								<li class="textarea-wrapper">
+									<label class="prompt">个人简介</label>
+									<textarea name="desc"></textarea>
+								</li>
+							</ul>
+						</div>
+						<div class="submit-wrapper empty"></div>
+					</form>
+				</div>
+				<div class="settings-wrapper" id="safety">
+					<p class="title icon key">安全</p>
+					<p>留空表示不改动</p>
+					<form class="left-align" name="safety">
+						<input type="hidden" name="token" />
+						<div class="section-wrapper">
+							<p class="title">身份验证</p>
+							<p>在更改敏感信息前，创否需要重新验证你的身份。你可以在通过验证后开启或关闭额外的验证方式</p>
+							<ul class="form-list">
+								<li>
+									<label class="prompt">现密码</label>
+									<input type="password" name="old_pwd" />
+								</li>
+								<li id="email-code-auth">
+									<label class="prompt">邮箱验证码</label>
+									<input type="password" name="email-code" />
+									<a class="icon text float-up email orange-bg" style="margin-left: 5px;">点击获取验证码</a>
+								</li>
+							</ul>
+						</div>
+						<div class="section-wrapper">
+							<p class="title">安全信息</p>
+							<ul class="form-list">
+								<li>
+									<label class="prompt">手机</label>
+									<input type="text" name="tel" limit="tel" />
+								</li>
+								<li>
+									<label class="prompt">新密码</label>
+									<input type="password" name="new_pwd" id="new-password" />
+								</li>
+								<li>
+									<label class="prompt">重复密码</label>
+									<input type="password" id="repeat-password" />
+								</li>
+								<li>
+									<label class="prompt">主要邮箱</label>
+									<input type="email" name="primary_email" />
+								</li>
+								<li>
+									<label class="prompt">备用邮箱</label>
+									<input type="email" name="backup_email" />
+								</li>
+								<li>
+									<label class="prompt">安全提问</label>
+									<input type="text" name="safe-q" />
+								</li>
+								<li>
+									<label class="prompt">安全回答</label>
+									<input type="text" name="safe-a" />
+								</li>
+							</ul>
+						</div>
+						<div class="section-wrapper">
+							<p class="title">二次验证</p>
+							<p>为了你的安全，创否强制要求在每次更改此类安全信息前验证重新验证你的身份。你可以在此基础上增加额外的保险措施。</p>
+							<ul class="form-list">
+								<li>
+									<input type="checkbox" class="switch" name="additional_email_auth" />
+									<label class="prompt">开启邮箱验证</label>
+								</li>
+								<li>
+									<input type="checkbox" class="switch" name="additional_phone_auth" />
+									<label class="prompt">开启手机验证</label>
+								</li>
+							</ul>
+						</div>
+						<div class="submit-wrapper empty"></div>
+					</form>
+				</div>
+				<div class="settings-wrapper" id="blocks"></div>
+				<div class="settings-wrapper" id="privacy">
+					<p class="title icon privacy">隐私</p>
+					<p>在这里设置谁可以访问你的资料，和你屏蔽的人与话题</p>
+					<form class="left-align" name="privacy">
+						<input type="hidden" name="token" />
+						<div class="section-wrapper">
+							<p class="title" id="settings-4-1">资料可见度</p>
+							<ul class="form-list">
+								<li>
+									<label class="prompt">我的动态</label>
+									<div class="selector-group empty" selector-type="checkbox" selectors="关注|好友|同城|陌生人" name="my_feed"></div>
+								</li>
+							</ul>
+						</div>
+						<div class="section-wrapper">
+							<p class="title" id="settings-4-2">这是什么</p>
+							<ul class="form-list"></ul>
+						</div>
+						<div class="submit-wrapper empty"></div>
+					</form>
+				</div>
+				<div class="settings-wrapper" id="exper"></div>
+				<div class="settings-wrapper" id="others"></div>
+			</div>
+		</div>
+	</div>
+	<footer></footer>
+</body>
+</html>
+

@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+	<meta charset="utf-8" />
+	<title>创否 - 完成注册</title>
+	<link rel="stylesheet" href="src/css/basic.css" />
+	<script src="src/lib/jquery.min.js"></script>
+	<script src="src/js/basic.js"></script>
+	<script src="src/js/password_reset.js"></script>
+</head>
+<body>
+	<header></header>
+	<div class="content-wrapper moderate-margin">
+		<div class="header-wrapper center">
+			<div class="header">
+				完成注册
+			</div>
+			<p class="subheader">填写下面的这些信息来完成在创否的第一步</p>
+			<p>所有的空格都为必填项</p>
+		</div>
+		<hr />
+		<div class="usr-content">
+			<div id="usr-form-wrapper">
+				<div class="usr-form wide wide-margin">
+					<form class="left-align">
+						<p class="icon text no-hover long-span email" id="email">dummy@dummy.com</p>
+						<input type="hidden" name="token" id="token" />
+						<div class="basic-info-wrapper">
+							<div>
+								<label class="prompt">真实姓名</label>
+								<input class="long-span" type="text" name="fullname" placeholder="请填写真实姓名" />
+							</div>
+							<div>
+								<label class="prompt">昵称</label>
+								<input class="long-span" type="text" name="username" placeholder="将作为显示给其它用户的名字" />
+							</div>
+							<div class="gender-select selector-wrapper">
+								<label class="prompt">性别</label>
+								<div class="selector-group">
+									<input id="gender-m" type="radio" name="gender" value="0">
+									<label for="gender-m">男</label>
+									<input id="gender-f" type="radio" name="gender" value="1">
+									<label for="gender-f">女</label>
+									<input id="gender-o" type="radio" name="gender" value="2">
+									<label for="gender-o">其它</label>
+									<input id="gender-u" type="radio" name="gender" value="3">
+									<label for="gender-u">保密</label>
+								</div>
+							</div>
+						</div>
+						<hr />
+						<div class="account-info-wrapper">
+							<div>
+								<label class="prompt">密码</label>
+								<input class="long-span" id="new-password" type="password" name="password" placeholder="密码" />
+							</div>
+							<div>
+								<label class="prompt">确认密码</label>
+								<input class="long-span" id="repeat-password" type="password" placeholder="确认密码" />
+							</div>
+							<div class="date-wrapper">
+								<label class="prompt">生日</label>
+							</div>
+							<div>
+								<label class="prompt">安全提问</label>
+								<input class="long-span" type="text" name="safe-q" placeholder="一个你觉得只有你知道答案的问题" />
+							</div>
+							<div>
+								<label class="prompt">安全回答</label>
+								<input class="long-span" type="text" name="safe-a" placeholder="上面那题的答案" />
+							</div>
+						</div>
+						<hr />
+						<div class="customize-wrapper center">
+							<div>
+								<input id="get-update" class="long-span" type="checkbox" name="get-update" />
+								<label for="get-update">我愿意接收来自创客的最新消息</label>
+							</div>
+							<div class="margin-ver-10 left-align">
+								<label class="prompt"><a class="icon ext-link">服务条款</a></label>
+								<input id="tos-confirm" class="long-span" type="checkbox" name="tos-confirm" />
+								<label for="tos-confirm" style="margin-left: 20px;">我已阅读并同意创客的服务条款</label>
+							</div>
+						</div>
+						<div class="captcha-wrapper">
+							<label class="prompt">验证码</label>
+							<div class="captcha"></div>
+						</div>
+						<div class="submit-wrapper moderate-margin empty"></div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer></footer>
+</body>
+</html>

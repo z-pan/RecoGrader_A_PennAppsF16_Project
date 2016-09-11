@@ -1,0 +1,235 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+	<meta charset="utf-8" />
+	<title>创否</title>
+	<link rel="stylesheet" href="src/css/basic.css" />
+	<link rel="stylesheet" href="src/css/aha.css" />
+	<script src="src/lib/jquery.min.js"></script>
+	<script src="src/lib/underscore.min.js"></script>
+	<script src="src/js/aha_test.js"></script>
+	<script src="src/js/aha.js"></script>
+	<script src="src/js/basic.js"></script>
+</head>
+<body class="green-body">
+	<header></header>
+	<div class="content-wrapper">
+		<div id="left-nav" class="r-color-wrapper margin-inh-wrapper green">
+			<nav>
+				<ul>
+					<li class="selected"><a class="icon text recommend">创荐</a></li>
+					<li><a class="icon text fire">热度</a></li>
+					<li><a class="icon text industry">领域</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="main-content">
+			<div id="new-idea">
+				<div class="screener"></div>
+				<div class="inner-wrapper">
+					<div class="add-new-idea-wrapper header-elem">
+						<a class="icon text plus-circle float-up green-bg round" id="add-new-idea" href="javascript:;"></a>
+					</div>
+					<div id="new-idea-submit" class="vertical-center">
+						<p class="title">新的点子</p>
+						<form class="new-idea-form" name="new_idea">
+							<ul class="form-list">
+								<li>
+									<label class="prompt">点子的标题</label>
+									<input type="text" name="title" />
+								</li>
+								<li class="textarea-wrapper">
+									<label class="prompt">详细描述</label>
+									<textarea name="detail"></textarea>
+								</li>
+								<li>
+									<label class="prompt active">上传图片（最多5张）</label>
+									<div class="upload-images-wrapper">
+										<img alt="上传图片" />
+										<img alt="上传图片" />
+										<img alt="上传图片" />
+										<img alt="上传图片" />
+										<img alt="上传图片" />
+										<a id="upload-images" class="icon text file-photo-o float-up green-bg file-upload" href="javascript:;">上传<input type="file" name="detail_img" accept="image/*" multiple /></a>
+									</div>
+								</li>
+								<li>
+									<div class="input-dropmenu" dropdown="studyField" multiple>
+										<label class="prompt">选择领域</label>
+									</div>
+									<p class="prompt">选择越精准，越有可能有人来打磨你的点子</p>
+								</li>
+								<li>
+									<div class="submit-wrapper empty"></div>
+								</li>
+							</ul>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="ideas-wrapper">
+				<div class="ideas-list-wrapper"></div>
+				<div class="ideas-list-wrapper"></div>
+			</div>
+		</div>
+	</div>
+	<script type="text/template" id="idea-template">
+		<% for (var h = 0; h !== d.length; ++h) { %>
+		<div class="idea-wrapper">
+			<div class="screener"></div>
+			<div class="idea-wrapper-helper">
+				<div class="idea">
+					<div class="header">
+						<div class="avatar-wrapper">
+							<img alt="头像" src="<%= d[h].user.avatar %>" />
+						</div>
+						<div class="header-detail">
+							<div class="info">
+								<p class="username"><%= d[h].user.name %></p>
+								<p>创建于</p>
+								<p class="datetime"><%= d[h].time.createdReadable %></p>
+							</div>
+							<div class="tag-wrapper">
+								<% for (var i = 0; i !== d[h].tags.length; ++i) { %>
+								<span class="tag"><%= d[h].tags[i] %></span>
+								<% } %>
+							</div>
+						</div>
+						<a class="icon text times toggle no-hover" href="javascript:;" title="关闭"></a>
+					</div>
+					<div class="detail-wrapper">
+						<div class="title"><%= d[h].content.title %></div>
+						<p class="detail"><%= d[h].content.detail %></p>
+						<a class="icon text show-more r-color">显示全文</a>
+					</div>
+					<div class="options-wrapper r-color-wrapper">
+						<div class="normal-icons">
+							<a class="icon text thumbs-o-up"><span class="text">可创</span><span class="num"><%= d[h].content.feedback.like %></span></a>
+							<a class="icon text thumbs-o-down"><span class="text">不可创</span><span class="num"><%= d[h].content.feedback.dislike %></span></a>
+							<a class="icon text eye"><span class="text">关注</span><span class="num"><%= d[h].content.feedback.watching %></span></a>
+							<a class="icon text flag-o">举报</a>
+							<a class="icon text ellipsis-h more toggle">更多</a>
+							<a class="icon text bookmark-o"><span class="text">收藏</span><span class="num"><%= d[h].content.feedback.star %></span></a>
+							<a class="icon text share-alt">分享</a>
+						</div>
+						<div class="tab-icons">
+							<a class="icon text comment-o">评论</a>
+							<a class="icon text expand">拓展</a>
+						</div>
+					</div>
+				</div>
+				<div class="comments tab<% d[h].comments.length? print(''): print(' empty') %>">
+					<% for (var i = 0; i !== d[h].comments.length; ++i) { %>
+					<div class="comment">
+						<div class="header">
+							<div class="avatar-wrapper">
+								<img alt="头像" src="<%= d[h].comments[i].user.avatar %>" />
+							</div>
+							<div class="header-detail">
+								<div class="info">
+									<p class="username<% d[h].comments[i].user.id === d[h].user.id? print(' author'): print('') %>"><%= d[h].comments[i].user.name %></p>
+									<p>评论于</p>
+									<p class="datetime"><%= d[h].comments[i].time.createdReadable %></p>
+								</div>
+								<% if (d[h].comments[i].content.reply) { %>
+								<div class="reply-to">
+									<span class="icon reply"></span><%= d[h].comments[i].content.reply %>
+								</div>
+								<% } %>
+							</div>
+							<div class="options r-color-wrapper">
+								<a class="icon text thumbs-o-up"><%= d[h].comments[i].content.feedback.like %></a>
+								<a class="icon reply" title="回复"></a>
+								<a class="icon flag-o" title="举报"></a>
+							</div>
+						</div>
+						<div class="detail-wrapper">
+							<div class="detail"><%= d[h].comments[i].content.detail %></div>
+						</div>
+					</div>
+					<% } %>
+					<div class="reminder">来说说你的想法吧</div>
+					<div class="tab-input">
+						<div class="input-wrapper">
+							<textarea class="comment-input" placeholder="说说你的看法…" max-height="80"></textarea>
+						</div>
+						<a class="icon text send-o r-color bordered" href="javascript:;">发表</a>
+					</div>
+				</div>
+				<div class="expansions tab<% d[h].expansions.length? print(''): print(' empty') %>">
+					<a class="icon angle-left nav round vertical-center" href="javascript:;"></a>
+					<a class="icon angle-right nav round vertical-center" href="javascript:;"></a>
+					<a class="icon text filter round" title="筛选"></a>
+					<a class="icon text round plus" href="javascript:;" title="添加新领域…"></a>
+					<div class="reminder">还没有人来拓展过，你有什么想法吗？</div>
+					<div class="new-expansion-wrapper">
+						<div class="new-expansion">
+							<ul class="form-list">
+								<li class="title">
+									<div class="input-dropmenu" dropdown="studyField" placeholder="选择领域"></div>
+									<p class="prompt">选择越精准，越有可能有人来拓展你的想法</p>
+								</li>
+								<li class="tab-input">
+									<div class="input-wrapper">
+										<textarea class="comment-input" placeholder="说说你的想法…" max-height="350"></textarea>
+									</div>
+									<a class="icon text send-o r-color bordered">发表</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="expansions-sections-wrapper">
+						<% for (var i = 0; i !== d[h].expansions.length; ++i) { %>
+						<div class="expansions-section">
+							<div class="title">
+								<p><%= d[h].expansions[i].field %></p>
+								<a class="icon text plus"></a>
+							</div>
+							<div class="expansions-wrapper">
+								<% for (var j = 0; j !== d[h].expansions[i].expansion.length; ++j) { %>
+								<div class="expansion">
+									<div class="header">
+										<div class="avatar-wrapper">
+											<img alt="头像" src="<%= d[h].expansions[i].expansion[j].user %>" />
+										</div>
+										<div class="header-detail">
+											<div class="info">
+												<p class="username<% d[h].expansions[i].expansion[j].user.id === d[h].user.id? print(' author'): print('') %>"><%= d[h].expansions[i].expansion[j].user.name %></p>
+												<p>拓展于</p>
+												<p class="datetime"><%= d[h].expansions[i].expansion[j].time.createdReadable %></p>
+											</div>
+											<% if (d[h].expansions[i].expansion[j].content.reply) { %>
+											<div class="reply-to">
+												<span class="icon reply"></span><%= d[h].expansions[i].expansion[j].content.reply %>
+											</div>
+											<% } %>
+										</div>
+										<div class="options r-color-wrapper">
+											<a class="icon text thumbs-o-up"><%= d[h].expansions[i].expansion[j].content.feedback.like %></a>
+											<a class="icon reply" title="回复"></a>
+											<a class="icon flag-o" title="举报"></a>
+										</div>
+									</div>
+									<div class="detail-wrapper">
+										<div class="detail"><%= d[h].expansions[i].expansion[j].content.detail %></div>
+									</div>
+								</div>
+								<% } %>
+							</div>
+							<div class="tab-input">
+								<div class="input-wrapper">
+									<textarea class="comment-input" placeholder="说说你的看法…" max-height="80" style="height: 16px; overflow-y: hidden;"></textarea>
+								</div>
+								<a class="icon text send-o r-color bordered" href="javascript:;">发表</a>
+							</div>
+						</div>
+						<% } %>
+					</div>
+				</div>
+			</div>
+		</div>
+		<% } %>
+	</script>
+	<footer></footer>
+</body>
+</html>

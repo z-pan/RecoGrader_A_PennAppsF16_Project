@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+	<meta charset="utf-8" />
+	<title>创否 - 密码找回</title>
+	<link rel="stylesheet" href="src/css/basic.css" />
+	<script src="src/lib/jquery.min.js"></script>
+	<script src="src/js/basic.js"></script>
+	<script src="src/js/password_reset.js"></script>
+</head>
+<body>
+	<header></header>
+	<div class="content-wrapper moderate-margin">
+		<div class="header-wrapper center">
+			<div class="header">
+				密码找回
+			</div>
+			<p class="subheader">通过注册时的邮箱以及其它安全信息来找回账号密码</p>
+			<p>如果你记不清你的邮箱和其它信息，可以尝试<a class="icon text contact on-white">联系我们</a></p>
+		</div>
+		<hr />
+		<div class="usr-content">
+			<div id="usr-form-wrapper">
+				<div class="usr-form wide wide-margin">
+					<form class="left-align">
+						<div>
+							<label class="prompt">邮箱</label>
+							<input class="long-span" type="text" name="email" placeholder="注册时的邮箱" />
+						</div>
+						<div class="hidden-div">
+							<div>
+								<hr />
+								<div class="date-wrapper">
+									<label class="prompt">生日</label>
+								</div>
+								<div>
+									<label class="prompt">安全提问</label>
+									<label class="as-input long-span" id="safe-q">?</label>
+								</div>
+								<div>
+									<label class="prompt">安全回答</label>
+									<input class="long-span" type="text" name="safe-a" placeholder="安全提问的答案" />
+								</div>
+								<hr />
+							</div>
+						</div>
+						<div class="captcha-wrapper">
+							<label class="prompt">验证码</label>
+							<div class="captcha"></div>
+						</div>
+						<div class="submit-wrapper moderate-margin empty">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+<footer></footer>
+</body>
+</html>

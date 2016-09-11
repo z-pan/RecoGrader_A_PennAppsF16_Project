@@ -1,0 +1,170 @@
+﻿
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+	<meta charset="utf-8" />
+	<title>创否 CrunchFeed</title>
+	<link rel="stylesheet" href="src/css/basic.css" />
+	<link rel="stylesheet" href="src/css/homepage.css" />
+	<script src="src/lib/jquery.min.js"></script>
+	<script src="src/lib/wow.min.js"></script>
+	<script src="src/js/homepage.js"></script>
+	<script src="src/js/basic.js"></script>
+</head>
+<body class="noselect">
+	<div id="nav-wrapper" class="orange-bg">
+		<a class="icon-large hidden" id="top" href="#intro">&#xf102</a>
+		<a class="icon-large" id="next" href="#detail-1">&#xf107</a>
+	</div>
+	<div id="intro" class="long-span orange-gradient">
+		<div id="intro-cover">
+			<div class="usr-content">
+				<div id="usr-form-wrapper">
+					<div class="usr-form form-signup center">
+						<div class="switch-wrapper">
+							<a class="icon text round long-span switch r-color" href="javascript:;">已有账号？现在登录！</a>
+						</div>
+						<hr />
+						<form action="/signup.php" name="signup-form" autocomplete="off">
+							<input name="name" value="signup" hidden />
+							<input class="long-span" type="text" name="email" placeholder="邮箱" />
+							<div class="invite split-span-wrapper">
+								<div class="left-span">
+									<input type="text" name="invite" placeholder="邀请码" />
+								</div>
+								<div class="right-span">
+									<a class="icon text round r-color">申请邀请码</a>
+								</div>
+							</div>
+							<div class="captcha split-span-wrapper">
+								<div class="left-span">
+									<input type="text" name="captcha" placeholder="验证码" autocomplete="off" />
+								</div>
+								<div class="right-span">
+									<div class="captcha-pic"></div>
+								</div>
+							</div>
+							<div class="submit-wrapper">
+								<button class="icon text float-up bordered round long-span submit" disabled>注册</button>
+							</div>
+						</form>
+					</div>
+					<div class="usr-form form-login center">
+						<div class="switch-wrapper">
+							<a class="icon text round long-span switch r-color" href="javascript:;">没有账号？现在注册！</a>
+						</div>
+						<hr />
+						<form action="/signin.php" name="login-form" autocomplete="off">
+							<input name="name" value="signin" hidden />
+							<input class="long-span" type="text" name="user" placeholder="用户名" />
+							<input class="long-span" type="password" name="password" placeholder="密码" />
+							<div class="captcha split-span-wrapper"></div>
+							<div class="submit-helper-wrapper split-span-wrapper">
+								<div class="left-span">
+									<input id="remember-me" type="checkbox" name="remember-me" checked />
+									<label for="remember-me">记住我</label>
+								</div>
+								<div class="right-span">
+									<a class="icon text round forget-psw r-color">忘记密码</a>
+								</div>
+							</div>
+							<div class="submit-wrapper">
+								<button class="icon text float-up bordered round long-span login" disabled>登录</button>
+							</div>
+							<div class="other-signin-wrapper"></div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="intro-wrapper">
+				<ul>
+					<li style="margin-left: 50px;">
+						<div class="brief-wrapper">
+							<a href="#detail-1">
+								<p class="title">
+									点子<span class="green-bg tag">啊哈！</span>
+								</p>
+								<p class="">大家一起“纵横”拓展有趣的创意点</p>
+							</a>
+						</div>
+					</li>
+					<li style="margin-left: 120px;">
+						<div class="brief-wrapper">
+							<a href="#detail-2">
+								<p class="title">
+									问答<span class="blue-bg tag">什么？</span>
+								</p>
+								<p class="">同病相怜，前车之鉴与成功经验的总集合</p>
+							</a>
+						</div>
+					</li>
+					<li style="margin-left: 190px;">
+						<div class="brief-wrapper">
+							<a href="#detail-3">
+								<p class="title">
+									项目<span class="orange-bg tag" style="background-color: orange; border-color: orange;">创作：</span>
+								</p>
+								<p class="">精准定位心仪合伙人，高效管理项目进程</p>
+							</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="homepage-more">
+		<ul>
+			<li>
+				<div id="detail-1" class="homepage-more-detail">
+					<p class="title green">
+						点子
+						<span class="tag green-bg">啊哈！</span>
+					</p>
+					<ul>
+						<li>由一人抛出一块创业点子的原石，由众多创业者一起将智慧“众筹”，将其精心地“纵横”打磨</li>
+						<li>独创“纵横”创意拓展系统，横向延伸领域综合创新，纵向打磨点子去糟存精</li>
+						<li>纵横浏览UI，只为更好地阅读每一个创业金点子的“纵横”拓展图，使你新创意迸发</li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<div id="detail-2" class="homepage-more-detail">
+					<p class="title blue">
+						问答
+						<span class="tag blue-bg">什么？</span>
+					</p>
+					<ul>
+						<li>创业进程中遇到麻烦？别担心，来创业问答找找“病友”。与同病相怜者，相互倾听鼓励</li>
+						<li>创业进程中犯了错误？别灰心，来创业问答勇敢直面，向同辈诉苦，向后辈警示，向前辈请教</li>
+						<li>创业路上已有一番作为？别吝啬，来创业问答“指点江山”，作为大神，秀出你的经验，说出你的感想</li>
+						<li>贴上标签为自己代言，每一个回答者与分享者可拥有几个代表专业、特长、工作年数等标签。是不是专家，大家说了才算。</li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<div id="detail-3" class="homepage-more-detail">
+					<p class="title orange">
+						项目
+						<span class="tag orange-bg">创作：</span>
+					</p>
+					<ul>
+						<li>采用独特算法，精准定位到你的未来创业拍档</li>
+						<li>设有每周小结、团队互评板块，调动全体成员积极性，提高创业效率</li>
+						<li>安排创业时间表，一键切换查看长短期任务，随时随地支持表格修改，任务优先级、人员分工等重要信息一目了然</li>
+						<li>设立任务提醒机制，第一时间得知最新任务，截止日期同样心中有数</li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<footer>
+		<ul class="r-color-wrapper">
+			<li>© 2015 创否</li>
+			<li><a class="icon text small about">关于我们</a></li>
+			<li><a class="icon text small nav">创否指南</a></li>
+			<li><a class="icon text small terms">创否协议</a></li>
+			<li><a class="icon text small contact">意见反馈</a></li>
+		</ul>
+	</footer>
+</body>
+</html>

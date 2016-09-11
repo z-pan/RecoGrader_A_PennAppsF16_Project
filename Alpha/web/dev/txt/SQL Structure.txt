@@ -1,0 +1,33 @@
+Entities: 
+user
+ideas
+comment
+expansion
+tags
+field
+
+=============================
+
+Relations:
+user	idea	1	N
+idea	user	N	1
+
+user	comment	1	N
+comment	user	1	1
+
+comment	idea	1	N
+idea	comment	N	1
+
+idea	tag	1	N
+tag	idea	N	1
+==============================
+
+Attributes:
+entity	key		attrib(s)
+------------------------------------------------------------------------------------------------------------------------------------------------------
+user	user_id		user_pw	user_nm	user_img	user_ctime				|
+idea	idea_id		ider_id	idea_ttl	idea_cnt	idea_ct	idea_mt	idea_fd	#xpan	#comm	|
+comment	idea_id	cm_id	cmer_id	comm_cnt	comm_ct						|
+expansion	idea_id	xpan_id	xpan_ct	xpan_fild							|
+tags	tag_id	tag_cnt									|
+field	fild_id	fild_cnt									|

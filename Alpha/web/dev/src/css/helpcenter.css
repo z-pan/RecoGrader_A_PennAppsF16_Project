@@ -1,0 +1,87 @@
+@charset 'utf-8';
+
+/* All the html's under help center should include this style sheet*/
+
+* {
+}
+
+article {
+	width: 790px;
+	display: inline-block;
+	padding: 50px;
+}
+
+	article * {
+		line-height: 2.5em;
+		font-weight: lighter;
+	}
+
+	article h1 {
+		font-size: 35px;
+	}
+
+	article p, article li {
+		font-size: 14px;
+	}
+
+	article ul {
+
+	}
+
+	article ol, article ul {
+    padding-left: 3em;
+		
+	
+    font-size: 14px;
+}
+
+.help-nav-center {
+	background-color: white;
+	padding: 10px;
+	display: inline-block;
+	width: 860px;
+}
+
+	.help-nav-center li {
+		display: inline-block;
+		margin: 20px 0;
+	}
+
+		.help-nav-center li:nth-child(odd) {
+			margin-right: 30px;
+			margin-left: 30px;
+		}
+
+.help-nav-center-block {
+	background-color: #fff;
+	width: 290px;
+}
+
+	.help-nav-center-block a.icon.text {
+		width: 230px;
+		padding: 20px 30px 30px 20px;
+	}
+
+		.help-nav-center-block a.icon.text:before {
+			font-size: 50px;
+			margin-left: 10px;
+		}
+
+	.help-nav-center-block p:not(.title) {
+		position: relative;
+		top: 20px;
+		left: 20px;
+		text-align: right;
+	}
+
+	.help-nav-center-block p.title {
+		text-align: center;
+		margin: 10px 10px 20px 10px;
+	}
+
+.content-wrapper {
+	min-width: 800px;
+	padding: 0;
+	width: 1100px;
+	min-height: 590px;
+}

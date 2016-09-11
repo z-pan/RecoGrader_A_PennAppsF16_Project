@@ -415,7 +415,7 @@ function loadIdeaFixMissingKeyValue(data) {
 
 			// Test for content
 			if (data[i].content) {
-				data[i].content.title = data[i].content.title || "未命名";
+				data[i].content.title = data[i].content.title || "Untitled";
 				data[i].content.detail = data[i].content.detail || "";
 
 				// feedback
@@ -457,7 +457,7 @@ function loadIdeaFixMissingKeyValue(data) {
 
 				// Test for reply content
 				if (comment.content) {
-					data[i].comments[k].content.title = data[i].comments[k].content.title || "未命名";
+					data[i].comments[k].content.title = data[i].comments[k].content.title || "Untitled";
 					data[i].comments[k].content.detail = data[i].comments[k].content.detail || "";
 
 					// feedback
@@ -512,7 +512,7 @@ function loadIdeaFixMissingKeyValue(data) {
 
 						// Test for reply content
 						if (subExpansion.content) {
-							data[i].expansions[m].expansion[n].content.title = data[i].expansions[m].expansion[n].content.title || "未命名";
+							data[i].expansions[m].expansion[n].content.title = data[i].expansions[m].expansion[n].content.title || "Untitled";
 							data[i].expansions[m].expansion[n].content.detail = data[i].expansions[m].expansion[n].content.detail || "";
 
 							// feedback

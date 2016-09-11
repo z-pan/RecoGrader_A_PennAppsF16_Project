@@ -7,7 +7,7 @@ function confirmResetPasswordMatch() {
 		// Test if the repeated password is the same as new password
 		if ($("#repeat-password").val() !== $("#new-password").val()) {
 			$("#repeat-password").addClass("error");
-			promptUserError("密码不匹配");
+			promptUserError("Password doesn't match.");
 		} else {
 			$("#repeat-password").removeClass("error");
 			hideUserFormError();

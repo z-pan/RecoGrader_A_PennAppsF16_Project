@@ -38,7 +38,7 @@ function disableSubmitButton(info) {
  * @since Alpha 0.0.6
  */
 function promptUserError(info) {
-	info = info || "发生错误";
+	info = info || “Error”;
 
 	$("#usr-warn-wrapper").addClass("show");
 	$("#usr-warn").text(info);
@@ -586,7 +586,7 @@ function initPresetDropdownMenu() {
 							"<label for=\"" + id + "\">" + list[i] + "</label> ";
 					}
 
-					html += "</div><p class=\"prompt\">支持关键词搜索和拼音首字母</p>";
+					html += "</div><p class=\"prompt\">Support Key Word Search</p>";
 
 					// Add the html after
 					$(this).removeClass("dropdown").after(html);
@@ -783,14 +783,14 @@ function getDropmenuValidMatchedResults(str) {
 }
 
 /**
- * Adds a submit button inside .submit-wrapper.empty with text 提交
+ * Adds a submit button inside .submit-wrapper.empty with text Submit
  * @since Alpha 0.0.30
  * @version Alpha 0.0.34
  */
 function initSubmitButton() {
 	$("form .submit-wrapper.empty")
 		.removeClass("empty")
-		.html("<button class=\"icon text float-up text bordered round long-span submit\" disabled>提交</button>");
+		.html("<button class=\"icon text float-up text bordered round long-span submit\" disabled>Submit</button>");
 }
 
 /**
@@ -808,7 +808,7 @@ function showFormHiddenDiv() {
 function initCaptcha() {
 	$("form .captcha")
 		.addClass("split-span-wrapper")
-		.html("<div class=\"left-span\"><input type=\"text\" name=\"captcha\" placeholder=\"验证码\" /></div><div class=\"right-span\"><div class=\"captcha-pic\"><img alt=\"验证码\" /></div></div>");
+		.html("<div class=\"left-span\"><input type=\"text\" name=\"captcha\" placeholder=\”CAPTCHA\” /></div><div class=\"right-span\"><div class=\"captcha-pic\"><img alt=\”CAPTCHA\” /></div></div>");
 
 	$(".captcha-pic").click(refreshCaptcha);
 }
@@ -834,7 +834,7 @@ function refreshCaptcha() {
  * @returns {} 
  */
 function initDateWrapper() {
-	$("form .date-wrapper").append("<input class=\"half-span center year\" type=\"number\" placeholder=\"年\" /><label>/</label><input class=\"quarter-span center month\" type=\"number\" placeholder=\"月\" /><label>/</label><input class=\"quarter-span center day\" type=\"number\" placeholder=\"日\" />");
+	$("form .date-wrapper").append("<input class=\"half-span center year\" type=\"number\" placeholder=\”Year\” /><label>/</label><input class=\"quarter-span center month\" type=\"number\" placeholder=\”Month\” /><label>/</label><input class=\"quarter-span center day\" type=\"number\" placeholder=\”Day\” />");
 }
 
 /**
@@ -849,24 +849,24 @@ function initFormDescriptionOnFocus() {
 			var prompt = "";
 
 			if ($(this).is("[name=userid]")) {
-				prompt = "你的ID，注册成功后将不可更改。只可以使用大小写字母、数字、下划线（_）、圆点（.）和横线（-）";
+				prompt = “Use only alphabets, digits, underline(_), dot(.), and hyphen(-). You will not be able to change your ID.";
 			} else if ($(this).is("[type=password]")) {
 				// Password, there are two cases
 
 				if ($(this).is("[id=repeat-password]")) {
 					// Repeat the password
-					prompt = "重复之前输过的密码";
+					prompt = “Re-enter the password”;
 				} else {
 					// Tell the user the format of the password
-					prompt = "密码长度为8-32位，可以使用下列字符的任意组合：<br/>" +
-						"- 大小写字母，区分大小写<br/>" +
-						"- 阿拉伯数字<br/>" +
-						"- 这些符号：~ ` ! @ # $ % ^ & * ( ) - _ = + { } [ ] | \\ : ; \" ' < > , . ? /";
+					prompt = “Password length 8-32 characters，use any of the following：<br/>" +
+						"- Upper and lower case alphabets<br/>" +
+						"- numbers<br/>" +
+						"- other symbols：~ ` ! @ # $ % ^ & * ( ) - _ = + { } [ ] | \\ : ; \" ' < > , . ? /";
 				}
 			} else if ($(this).is("[name=email]") || $(this).is("[type=email]")) {
-				prompt = "输入合法的邮箱";
+				prompt = “Enter valid email”;
 			} else if ($(this).is("[limit=tel]")) {
-				prompt = "输入合法的中国手机号码";
+				prompt = “Enter valid phone number“;
 			}
 
 			if (prompt) {
@@ -979,9 +979,9 @@ function validatePasswordFormat($input) {
 
 				// Test for length
 				if (val.length < 8) {
-					promptUserError("密码长度太短");
+					promptUserError(“Password too short”);
 				} else if (val.length > 32) {
-					promptUserError("密码长度太长");
+					promptUserError(“Password too long”);
 				}
 			}
 		}
@@ -1068,7 +1068,7 @@ function validateDateFormat($input) {
 			}
 
 			// Else: wrong format of the date
-			promptUserError("日期格式错误");
+			promptUserError(“Wrong date format“);
 			setInputElemError($(this).parent().children("input"));
 		}
 	});
@@ -1429,35 +1429,35 @@ function getHumanReadableTime(time, now) {
 	if (dif <= 0) {
 		dif = -dif;
 		if (dif < 60) {
-			return "刚才";
+			return “Just now“;
 		}
 		if (dif >= 60 && dif < 3600) {
-			return String(Math.floor(dif / 60)) + "分钟前";
+			return String(Math.floor(dif / 60)) + “mins ago”;
 		}
 		if (dif >= 3600 && dif < 3600 * 24) {
-			return String(Math.floor(dif / 3600)) + "小时前";
+			return String(Math.floor(dif / 3600)) + “hours ago”;
 		}
 		if (dif >= 3600 * 24 && dif <= 3600 * 24 * 30) {
-			return String(Math.floor(dif / (3600 * 24))) + "天前";
+			return String(Math.floor(dif / (3600 * 24))) + “days ago“;
 		} else {
-			return String(d.getFullYear()) + "年" + String(d.getMonth() + 1) + "月" + String(d.getDate()) + "日";
+			return String(d.getFullYear()) + “Year” + String(d.getMonth() + 1) + “Month” + String(d.getDate()) + “Day”;
 		}
 
 	}
 	if (dif > 0) {
 		if (dif < 60) {
-			return "马上";
+			return “Just now“;
 		}
 		if (dif >= 60 && dif < 3600) {
-			return String(Math.floor(dif / 60)) + "分钟后";
+			return String(Math.floor(dif / 60)) + “mins later“;
 		}
 		if (dif >= 3600 && dif < 3600 * 24) {
-			return String(Math.floor(dif / 3600)) + "小时后";
+			return String(Math.floor(dif / 3600)) + “hours later“;
 		}
 		if (dif >= 3600 * 24 && dif <= 3600 * 24 * 30) {
-			return String(Math.floor(dif / (3600 * 24))) + "天后";
+			return String(Math.floor(dif / (3600 * 24))) + “days later“;
 		} else {
-			return String(d.getFullYear()) + "年" + String(d.getMonth() + 1) + "月" + String(d.getDate()) + "日";
+			return String(d.getFullYear()) + “Year” + String(d.getMonth() + 1) + “Month” + String(d.getDate()) + “Day”;
 		}
 
 	}

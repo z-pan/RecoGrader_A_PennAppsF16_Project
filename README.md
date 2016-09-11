@@ -2,7 +2,7 @@
 
 Version 1.1.0
 
-Author: Anoxic
+Author: Z.P
 
 Last updated: Sept 4, 2015
 

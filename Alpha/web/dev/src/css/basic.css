@@ -198,6 +198,14 @@ button::-moz-focus-inner, input::-moz-focus-inner, legend {
 	width: 0;
 }
 
+@font-face {
+	font-family: "FontAwesome";
+	font-style: normal;
+	font-weight: normal;
+	src: url('../fonts/fontawesome-webfont.eot?v=4.4.0');
+	src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.4.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.4.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.4.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.4.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.4.0#fontawesomeregular') format('svg');
+}
+
 @keyframes spin {
 	0% {
 		transform: rotate(0);
@@ -472,6 +480,7 @@ button::-moz-focus-inner, input::-moz-focus-inner, legend {
 }
 
 :before {
+	font-family: "FontAwesome";
 }
 
 ul {
@@ -589,6 +598,7 @@ ul {
 		ul.form-list .selector-group:after {
 			content: "\f0d7";
 			display: inline-block;
+			font-family: "FontAwesome";
 			margin: 14px 13px;
 			position: absolute;
 			right: 0;
@@ -651,6 +661,7 @@ ul.form-list input.error:focus + p.prompt {
 			ul.form-list input[type=checkbox] + label:after {
 				content: "\f00c";
 				display: block;
+				font-family: "FontAwesome";
 				font-size: 12px;
 				left: 16px;
 				overflow: hidden;
@@ -1778,6 +1789,7 @@ footer {
 	}
 
 	#left-nav li.has-sub > a:after {
+		font-family: "FontAwesome";
 		margin-top: 3px;
 		padding-left: .5em;
 		position: absolute;
@@ -2210,6 +2222,7 @@ footer {
 
 	.icon::before {
 		display: inline-block;
+		font-family: "FontAwesome";
 		margin-right: .5em;
 		width: 1em;
 	}
@@ -4847,6 +4860,7 @@ footer {
 
 .icon-large {
 	border-radius: 100px;
+	font-family: "FontAwesome";
 	font-size: 30px;
 	padding: 10px 15px;
 }
